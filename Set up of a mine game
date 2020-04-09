@@ -1,0 +1,65 @@
+public class Main
+{
+
+    public static void main(String[] args)
+    {
+        int m = Integer.parseInt(args[0]);
+        int n = Integer.parseInt(args[1]);
+        int k = Integer.parseInt(args[2]);
+        String[][] array = new String[m][n];
+        for (int i=0;i<k ;i++ )
+        {
+            int r= (int) (Math.random() * m);
+            int s = (int) (Math.random()*n);
+            array[r][s] = "*";
+            System.out.println(r +" " + s);
+        }
+        for (int j =0;j<m;j++ )
+        {
+            for (int l =0;l<n ;l++ )
+            {
+                if (!array[j][l].equals("*"))
+                {
+                    int num = 0;
+                    if (array[j + 1][l + 1].equals("*"))
+                    {
+                        num++;
+                    } else
+                        {
+                            if (array[j - 1][l - 1].equals("*"))
+                            {
+                                num++;
+                            }
+                            if (array[j][l + 1].equals("*"))
+                            {
+                                num++;
+                            }
+                            if (array[j][l - 1].equals("*"))
+                            {
+                                num++;
+                            }
+                            if (array[j - 1][l + 1].equals("*"))
+                            {
+                                num++;
+                            }
+                            if (array[j + 1][l - 1].equals("*"))
+                            {
+                                num++;
+                            }
+                            if (array[j + 1][l].equals("*"))
+                            {
+                                num++;
+                            }
+                            if (array[j - 1][l].equals("*"))
+                            {
+                                num++;
+                            }
+                        }
+                    array[j][l]= String.valueOf(num);
+                }
+            }
+
+        }
+
+    }
+}
