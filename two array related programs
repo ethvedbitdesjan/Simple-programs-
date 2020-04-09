@@ -1,0 +1,52 @@
+\\finding if an array is beautiful or not
+import java.util.Scanner;
+public class Main {
+    private static Scanner scan = new Scanner(System.in);
+    public static void main(String[] args) {
+      int n = scan.nextInt();
+      int[] numbers = new int[n];
+      int sum = 0;
+      for(int i =0; i<n;i++)
+      {
+        numbers[i] = scan.nextInt();
+        sum = sum + numbers[i];
+      }
+      if(sum%2==0 && sum%3==0 && sum%5==0){
+        System.out.println("1");
+      }else{
+             System.out.println("0");
+      }
+      
+    }
+}
+\\ finding duplicate numbers in an array
+import java.util.Scanner;
+public class Main {
+    private static Scanner scan = new Scanner(System.in);
+    public static void main(String[] args) {
+        int n = scan.nextInt();
+        int [] ids = new int [n];
+        ids[0]= scan.nextInt();
+        int no =0;
+      for(int i=1;i<n;i++)
+        {
+          ids[i]= scan.nextInt();
+          for(int j=n-1;j>-1;j--)
+          {
+         
+            if(ids[i]==ids[j]&& j!=i)
+            {
+           
+              System.out.println(ids[i]);
+              no=1;
+          
+            }
+          }
+      }
+      if (no!=1)
+       {
+         System.out.println("-1");
+       }
+            
+    }
+}
