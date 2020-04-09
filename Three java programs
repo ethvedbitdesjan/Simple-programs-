@@ -1,0 +1,75 @@
+\\ find the number of possible ways to shuffle n number of cards
+import java.util.Scanner;
+public class Main {
+    private static Scanner scan = new Scanner(System.in);
+    public static void main(String[] args) {
+        int n = scan.nextInt();
+        int ans=1;
+        for(int i =1; i<=n;i++)
+        {
+          ans = ans*i;
+        }
+       System.out.println(ans);
+    }
+}
+\\ to check if a number is saturated
+import java.util.Scanner;
+public class Main {
+    private static Scanner scan = new Scanner(System.in);
+    public static void main(String[] args) {
+      int n = scan.nextInt();
+      int x =0;
+      int div =n/10;
+      int modu =n%10;
+      int[] prev = new int[2];
+      prev[0]=modu;
+      prev[1]=div%10;
+      while(x<2 && div!=0)
+      {
+        modu = div%10;
+        if(modu!=prev[0] && modu!=prev[1])
+        {
+          x=x+1;
+        }
+        div = div/10;
+        }
+      if (x<2)
+      {
+        System.out.println("Saturated");
+      }else
+      {
+        System.out.println("Unsaturated");
+      }
+      
+    }
+}
+\\ code to find number of consecutive ones in an input number
+import java.util.Scanner;
+public class Main {
+    private static Scanner scan = new Scanner(System.in);
+    public static void main(String[] args) {
+        long num = scan.nextLong();
+        
+        int count= 1;
+        int m =0;
+        
+      while(num>0){
+          if(num%10 == 1){
+            
+            if(m==1){
+            
+            count++;
+            }else{
+              
+              m =1;
+            }
+          }else{
+              m =0;
+            } 
+          num = num/10;
+          
+        }
+        System.out.println(count);
+          
+    }
+}
